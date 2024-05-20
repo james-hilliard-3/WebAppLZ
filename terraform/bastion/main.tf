@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "bastion_public_ip" {
 }
 
 resource "azurerm_bastion_host" "bastion" {
-  name                = "${local.resource_name_prefix}-bastion"
+  name                = "${var.resource_name_prefix}-bastion"
   location            = var.location
   resource_group_name = var.resource_group_name
   dns_name            = "bastion${random_string.prefix.result}.eastus.azure.bastion"
